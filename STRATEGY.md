@@ -61,7 +61,12 @@ slices of the 24-hour dev window, mean over 4 fail-key draws:
 | 18–24 h | +0.07 | +0.004 SOL | 21 | 2 | 0.16% |
 
 Overall: **mean hourly Sharpe −0.08, mean net +0.001 SOL, 3 of 4 slices
-positive**. The dev window is a hard regime (all three house pilots lose on
+positive**. Full 24-hour dev window, `grade-local --driver process`:
+**net PnL +0.0183 SOL**, 78 fills over 39 coins, 39 round trips, win rate
+28.2%, max drawdown 0.36%, guardrails met, L1 regrade byte-identical.
+Stress (10 rebuilt copies of the dev window): median −0.04 SOL, p10 −0.11,
+p90 −0.02, 9 of 10 lost money — the dev score leans on this window's
+particular coins. The dev window is a hard regime (all three house pilots lose on
 it), so the dev number is a stress test, not a forecast: the final window is
 a fresh 6 hours of coins that do not exist yet. What the design buys is
 asymmetry — losers are small (0.05 SOL stakes at most, −12% stop) and quick,

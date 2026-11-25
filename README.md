@@ -16,7 +16,12 @@ funds.
 
 Local 6-hour slices of the dev window: **mean hourly Sharpe −0.08, mean net
 PnL +0.001 SOL, 3 of 4 slices positive**, 21–23 coins per slice, max
-drawdown ≤0.4%. See STRATEGY.md for the full notes.
+drawdown ≤0.4%. Full dev window (`grade-local --driver process`):
+**net PnL +0.0183 SOL**, 78 fills over 39 coins, 39 round trips, win rate
+28.2%, max drawdown 0.36%, guardrails met, L1 regrade byte-identical. Stress
+(10 rebuilt copies): median −0.04 SOL, 9 of 10 lost money — the dev score
+leans on this window's coins, so treat it as a stress test, not a forecast.
+See STRATEGY.md for the full notes.
 
 ## Run it
 
