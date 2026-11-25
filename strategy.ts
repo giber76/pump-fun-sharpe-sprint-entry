@@ -388,6 +388,8 @@ export function createStrategy(p: Params = DEFAULT_PARAMS): Bot {
         const cost = Number(pos.cost_lamports) / LAMPORTS;
         if (value > h.peakValue) h.peakValue = value;
         h.lastValue = value;
+        // `exiting` is sticky: once any exit condition fires, the position keeps
+        // trying to sell on every batch until the sell actually fills.
         let exit = h.exiting;
         const t = tapeOf(mint);
         if (!exit && value >= cost * (1 + p.takeProfit)) exit = true;
